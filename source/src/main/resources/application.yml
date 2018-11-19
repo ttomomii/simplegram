@@ -11,9 +11,14 @@ spring:
 # DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sample_db
-    username: mizuochi0830
-    password: mizuochi0830
+    url: jdbc:mysql://52.192.206.74:3306/simplegram
+    username: root
+    password: AWS!mqqebe63
+    connectionProperties: useUnicode=true;characterEncoding=utf-8;
+    tomcat:
+      test-on-borrow: true
+    dbcp:
+      validation-query: SELECT 1
 # JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
   jpa:
     hibernate:
