@@ -87,12 +87,12 @@
 /******/ ([
 /* 0 */
 /*!***********************************!*\
-  !*** multi ./config/app/index.js ***!
+  !*** multi ./config/src/index.js ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\pleiades\\workspace\\demo\\src\\main\\resources\\config\\app\\index.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\pleiades\\workspace\\demo\\src\\main\\resources\\config\\src\\index.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })
