@@ -10,9 +10,9 @@ proxy[`${process.env._CONTEXT_PATH}/public/resource-dev/dist/bundle.css`] = {
 const commonConfig = {
     devServer: {
         contentBase: PATH_DIST,
-        watchContentBase: true,
-        host: "0.0.0.0",
-        port: 3600,
+        // watchContentBase: true,
+        // host: "0.0.0.0",
+        // port: 3600,
         hotOnly: true,
         overlay: false,
         proxy: proxy
@@ -36,7 +36,7 @@ const commonConfig = {
                         }
                     },
                     {
-                        loader: require.resolve('scss-loader'),
+                        loader: require.resolve('sass-loader'),
                         options: {
                             importLoaders: 1
                         }
@@ -49,7 +49,7 @@ const commonConfig = {
                             plugins: () => [
                                 require('postcss-flexbugs-fixes'),
                                 autoprefixer({
-                                    browsers: ['', '', '', '',],
+                                    browsers: ['>5%', 'last 4 version', 'Firefox ESR', 'not ie < 11',],
                                     flexbox: 'no-2900',
                                 }),
                             ],
@@ -69,11 +69,11 @@ const commonConfig = {
 module.exports = {
     ...commonConfig,
     //エントリポイントのJavaScript
-    entry: './index.js',
+    entry:  path.resolve(__dirname, 'index.js'),
     output: {
         filename: 'bundle.js',
         path: PATH_DIST,
-        publicPath: `${process.env.CONTEXT_PATH}/public/resource-dev/dist`
+        publicPath: PATH_DIST
     },
     module: {
         rules: [
@@ -81,8 +81,8 @@ module.exports = {
                 test: /\.js$/,// 拡張子がjsで
                 exclude: /node_modules/,// node_modulesフォルダ配下は除外
                 loader: 'babel-loader',// babel-loaderを使って変換する
-                query: {
-                    plugins: ["transform-react-jsx"] // babelのtransform-react-jsxプラグインを使ってjsxを変換
+                options: {
+                    presets: ['@babel/preset-env','@babel/preset-react']
                 }
             }
         ]

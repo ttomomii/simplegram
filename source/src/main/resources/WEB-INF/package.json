@@ -2,9 +2,9 @@
   "name": "simplegram",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "start": "webpack --color --config ./config/webpack.config.js",
+    "start": "webpack-dev-server --color --config ./config/webpack.config.js",
     "build": "webpack --color --config ./config/webpack.config.js",
     "test": "webpack-dev-server --color --config ./config/webpack.config.js",
     "lint": "eslint src"
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "css-loader": "^1.0.1",
@@ -34,8 +35,11 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "node-sass": "^4.10.0",
+    "onsenui": "^2.10.5",
     "postcss-loader": "^3.0.0",
+    "react-onsenui": "^1.11.1",
     "sass-lint": "^1.12.1",
+    "sass-loader": "^7.1.0",
     "scss-loader": "0.0.1",
     "source-map-explorer": "^1.6.0",
     "style-loader": "^0.23.1",

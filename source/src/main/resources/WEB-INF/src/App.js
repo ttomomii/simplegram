@@ -1,17 +1,47 @@
 import React from 'react'
-import {Input} from 'react-onsenui'
+import {Input,Button} from 'react-onsenui'
 
 
 export default class App extends React.Component {
 
-    render () {
-        return
-        <li>ログイン画面</li>
-        <Input
-        value={this.state.text} float
-        onChange={(event) => { this.setState({text: event.target.value})} }
-        modifier='material'
-        placeholder='Username' />
+    constructor(props) {
+        super(props);
+        this.state = {
+            accountId: "",
+            password: "",
+            errors: []
+        };
     }
 
+    onChangeAccountId(inputVal){
+        this.setState({
+            accountId: inputVal})
+    }
+
+    onChangePassword(inputVal){
+        this.setState({
+            password: inputVal})
+    }
+
+
+    render() {
+        return (
+            <div>
+                <a>ログイン画面</a>
+                < Input
+                    float
+                    onChange={this.onChangeAccountId.bind(this)}
+                    modifier='material'
+                    placeholder='Account ID'/>
+                < Input
+                    float
+                    onChange={this.onChangePassword.bind(this)}
+                    modifier='material'
+                    placeholder='Password'/>
+                <Button modifier="large--cta">
+                    Login
+                </Button>
+            </div>
+        );
+    }
 }
